@@ -1,26 +1,15 @@
 ﻿namespace Life
 {
-    public class Cell
+    public class LiveCell
     {
-        private State StartState { get; }
         private int LivingNeighbours { get; }
-        public Cell(bool isAlive, int livingNeighbours)
+        public LiveCell(int livingNeighbours)
         {
-            StartState = isAlive ? State.Lives : State.Dies;
             LivingNeighbours = livingNeighbours;
         }
 
         public State CalculateState()
         {
-            if (StartState == State.Dies)
-            {
-                if (LivingNeighbours == 3)
-                {
-                    return State.Lives;
-                }
-                return State.Dies;
-            }
-
             switch (LivingNeighbours)
             {
                 case 0:
