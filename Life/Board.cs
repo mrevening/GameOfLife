@@ -1,17 +1,15 @@
-﻿using System.Collections.Generic;
-
-namespace Life
+﻿namespace Life
 {
     public class Board
     {
-        public List<LiveCellOnBoard> LiveCells { get; private set; } = new List<LiveCellOnBoard>();
+        private List<LiveCellOnBoard> LiveCells { get; } = new List<LiveCellOnBoard>();
 
         public Board(List<LiveCellOnBoard> liveCells)
         {
             LiveCells = liveCells;
         }
 
-        private List<LiveCellOnBoard> CalculateTick()
+        public List<LiveCellOnBoard> CalculateTick()
         {
             var newBoardState = new List<LiveCellOnBoard>();
 
