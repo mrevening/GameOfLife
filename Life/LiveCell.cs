@@ -1,16 +1,12 @@
 ﻿namespace Life
 {
-    public class LiveCell
+    public class LiveCell : ICell
     {
-        private int LivingNeighbours { get; }
-        public LiveCell(int livingNeighbours)
-        {
-            LivingNeighbours = livingNeighbours;
-        }
+        public LiveCell() { }
 
-        public State CalculateState()
+        public State CalculateState(int livingNeighbours)
         {
-            switch (LivingNeighbours)
+            switch (livingNeighbours)
             {
                 case 0:
                 case 1:

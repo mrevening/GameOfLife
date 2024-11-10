@@ -1,16 +1,12 @@
 ﻿namespace Life
 {
-    public class DeadCell
+    public class DeadCell : ICell
     {
-        private int LivingNeighbours { get; }
-        public DeadCell(int livingNeighbours)
-        {
-            LivingNeighbours = livingNeighbours;
-        }
+        public DeadCell() {}
 
-        public State CalculateState()
+        public State CalculateState(int livingNeighbours)
         {
-            if (LivingNeighbours == 3)
+            if (livingNeighbours == 3)
             {
                 return State.Lives;
             }
