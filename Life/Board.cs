@@ -18,9 +18,9 @@
             var minCol = LiveCells.Min(col => col.Col);
             var maxCol = LiveCells.Max(col => col.Col);
 
-            for(var row = minRow - 1; row == maxRow + 1; row++)
+            for(var row = minRow - 1; row <= maxRow + 1; row++)
             {
-                for(var col = minCol - 1; col == maxCol + 1; col++)
+                for(var col = minCol - 1; col <= maxCol + 1; col++)
                 {
                     var state = CalculateCell(row, col);
                     if (state == State.Lives)

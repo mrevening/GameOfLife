@@ -22,7 +22,7 @@ namespace LifeTest
             var sut = new Board(livingCells);
             var newTick = sut.CalculateTick();
 
-            Assert.Equal(new List<LiveCellOnBoard>() { new(1, 2) }, newTick);
+            Assert.Equivalent(new List<LiveCellOnBoard>() { new(0, 2), new(1, 2), new(2, 2) }, newTick);
         }
     }
 }
