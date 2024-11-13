@@ -23,11 +23,11 @@ namespace LifeTest
             var sut = new Game(board, 2);
             sut.Start();
 
-            Assert.Equivalent(new List<LiveCellOnBoard>() { new(1, 2), new(1, 3), new(2, 2), new(2, 3), new(3, 2), new(3, 3), }, sut.CurrentBoard.CalculateTick());
+            Assert.Equivalent(new List<LiveCellOnBoard>() { new(1, 1), new(0, 2), new(0, 3), new(2, 2), new(2, 3), new(1, 4), }, sut.CurrentBoard.CalculateTick());
         }
 
         [Fact]
-        public void Example5_Tick3()
+        public void Example6_Tick5()
         {
             var livingCells = new List<LiveCellOnBoard>() { new(1, 1), new(1, 2), new(1, 3), new(1, 4) };
             var board = new Board(livingCells);
