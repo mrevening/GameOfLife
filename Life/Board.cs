@@ -2,7 +2,7 @@
 {
     public class Board
     {
-        private List<LiveCellOnBoard> LiveCells { get; } = new List<LiveCellOnBoard>();
+        public List<LiveCellOnBoard> LiveCells { get; } = new List<LiveCellOnBoard>();
 
         public Board(List<LiveCellOnBoard> liveCells)
         {
@@ -13,14 +13,14 @@
         {
             var newBoardState = new List<LiveCellOnBoard>();
 
-            var minRow = LiveCells.Min(cell => cell.Row);
-            var maxRow = LiveCells.Max(cell => cell.Row);
-            var minCol = LiveCells.Min(col => col.Col);
-            var maxCol = LiveCells.Max(col => col.Col);
+            int minRow = LiveCells.Min(cell => cell.Row);
+            int maxRow = LiveCells.Max(cell => cell.Row);
+            int minCol = LiveCells.Min(col => col.Col);
+            int maxCol = LiveCells.Max(col => col.Col);
 
-            for(var row = minRow - 1; row <= maxRow + 1; row++)
+            for(int row = minRow - 1; row <= maxRow + 1; row++)
             {
-                for(var col = minCol - 1; col <= maxCol + 1; col++)
+                for(int col = minCol - 1; col <= maxCol + 1; col++)
                 {
                     var state = CalculateCell(row, col);
                     if (state == State.Lives)

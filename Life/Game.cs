@@ -5,10 +5,10 @@
         private int MaxIteration { get; }
         private int CurrentIteration { get; set; }
         public Board CurrentBoard { get; private set; }
-        public Game(Board InitBoard, int maxIterations) 
+        public Game(Board InitBoard, int iterations) 
         {
             CurrentBoard = InitBoard;
-            MaxIteration = maxIterations;
+            MaxIteration = iterations;
             CurrentIteration = 0;
         }
 

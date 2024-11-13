@@ -6,11 +6,7 @@
 
         public State CalculateState(int livingNeighbours)
         {
-            if (livingNeighbours == 3)
-            {
-                return State.Lives;
-            }
-            return State.Dies;
+            return livingNeighbours == 3 ? State.Lives : State.Dies;
         }
     }
 }
